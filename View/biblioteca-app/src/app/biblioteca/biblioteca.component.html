@@ -1,0 +1,21 @@
+<h2>Livros</h2>
+
+<ul class="livros">
+   <li *ngFor="let livro of livros"> <!-- *ngFor is a Repeater directive -->
+    <a routerLink="/detalhe/{{livro.id}}">
+      <span class="id">{{livro.id}}</span> {{livro.nome}}
+    </a>
+    <button type="button" class="delete" title="delete livro"
+  (click)="delete(livro)">x</button>
+  </li>
+</ul>
+
+<div>
+  <label for="new-livro">Livro name: </label>
+  <input id="new-livro" #livroName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="add-button" (click)="add(livroName.value); livroName.value=''">
+    Add livro
+  </button>
+</div>

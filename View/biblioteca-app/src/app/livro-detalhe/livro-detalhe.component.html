@@ -1,0 +1,12 @@
+<div *ngIf="livro"> <!-- *ngIf directive renders the info when selected -->
+
+  <h2>{{livro.nome | uppercase}} Detalhes</h2>
+  <div>Id: {{livro.id}}</div>
+  <div>
+    <label for="livro-nome">Livro nome: </label>
+    <input id="livro-nome" [(ngModel)]="livro.nome" placeholder="Nome">
+  </div>
+
+  <button type="button" (click)="salvar()">Salvar</button>
+  <button type="button" (click)="voltar()">Voltar</button>
+</div>

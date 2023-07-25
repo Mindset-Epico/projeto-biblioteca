@@ -1,0 +1,8 @@
+<h2>Top Livros</h2>
+<div class="livros-menu">
+  <a *ngFor="let livro of livros" routerLink="/detalhe/{{livro.id}}">
+    {{livro.nome}}
+  </a>
+</div>
+
+<app-livro-busca></app-livro-busca>
